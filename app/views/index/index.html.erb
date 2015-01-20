@@ -1,0 +1,38 @@
+<html>
+<head>
+Negatív Captcha
+</head>
+
+<body>
+
+<form name="reg" action="/reg/reg.html.erb" method="post">
+
+  <% form_tag comments_path do -%>
+      <%= raw negative_captcha(@captcha) %>
+      <ul class="contact_us">
+        <li>
+          <%= negative_label_tag(@captcha, :felhasznalo_nev, 'Name:') %>
+          <%= negative_text_field_tag(@captcha, :name) %>
+        </li>
+        <li>
+          <%= negative_label_tag(@captcha, :jelszo, 'Email:') %>
+          <%= negative_text_field_tag(@captcha, :email) %>
+        </li>
+        <li>
+          <label>Felhasználónév:</label>
+          <input type="text" name="felhnev">
+          <label>Jelszó:</label>
+          <input type="text" name="jelszo">
+        </li>
+
+        <li>
+          <%= submit_tag %>
+        </li>
+      </ul>
+  <% end -%>
+
+</form>
+
+</body>
+
+</html>

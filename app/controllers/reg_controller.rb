@@ -1,0 +1,2 @@
+class RegController < ApplicationController
+end
